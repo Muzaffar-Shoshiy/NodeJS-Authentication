@@ -20,7 +20,7 @@ const isAuthenticated = (req, res, next) => {
   if(req.isAuthenticated()){
     return next()
   }else{
-    req.flash('error','Sorry, but you must be registered first!')
+    // req.flash('error','Sorry, but you must be registered first!')
     res.redirect('/')
   }
 }

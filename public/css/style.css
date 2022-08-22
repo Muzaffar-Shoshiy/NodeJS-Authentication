@@ -1,6 +1,5 @@
 body {
   padding-top: 0px;
-  padding-bottom: 40px;
 }
 
 .form-signin {
@@ -11,6 +10,7 @@ body {
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
   margin-bottom: 10px;
+  color: white;
 }
 .form-signin .checkbox {
   font-weight: normal;
@@ -35,4 +35,15 @@ body {
 .form-signin input[type="password"] {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+.alert{
+  padding: 1vw 0;
+  width: 100%;
+  text-align: center;
+}
+.alert-success{
+  background-color: green;
+}
+.alert-danger{
+  background-color: tomato;
 }

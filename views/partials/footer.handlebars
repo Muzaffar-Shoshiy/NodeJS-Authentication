@@ -1,4 +1,102 @@
-<!-- Site footer -->
+{{!-- <!-- Site footer -->
 <footer class="footer">
   <p>&copy; 2022 Shoshiy</p>
-</footer>
+</footer> --}}
+
+<section id="footer-section" class="footer-section">
+        <div class="footer-block container space-b-align-start">
+            <div class="footer-card mt-4">
+                <div class="logo-footer"><a href="">Muzaffar Shoshiy</a></div>
+                <p class="footer-desc mt-2">Pool equipment, chemicals and accessories for the pool, the construction of a "turn-key" pool, pool maintenance.</p>
+                <a href="" class="space-start"> <p class="footer-location"><i class="fa-solid fa-location-dot"></i> Khushnavo str.,<br>Tashkent, Uzbekistan</p></a>
+                <a href="" class="space-start"> <p class="footer-location"><i class="fa-solid fa-phone"></i> +998 93 568 96 77</p></a>
+                <a href="" class="space-start"> <p class="footer-location"><i class="fa-solid fa-envelope"></i> muzaffart2022@gmail.com</p></a>
+                <div class="space-start mt-2">
+                    <a href=""><i id="footer-icons" class="fa-brands fa-facebook-f"></i></a>
+                    <a href=""><i id="footer-icons" class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i id="footer-icons" class="fa-brands fa-telegram"></i></a>
+                </div>
+            </div>
+            <div class="footer-card mt-4">
+                <p class="footer-topic">recent news <span></span></p>
+                <p class="news-decs">Uzbekneftegas company</p>
+                <p class="news">
+                    <i class="fa-regular fa-clock"></i> 29.04.2022 
+                </p>
+                <p class="news-decs">Neko learning center</p>
+                <p class="news">
+                    <i class="fa-regular fa-clock"></i> 04.06.2022 
+                </p>
+                <p class="news-decs">Sales doctor</p>
+                <p class="news">
+                    <i class="fa-regular fa-clock"></i> 17.07.2022 
+                </p>
+            </div>
+            <div class="footer-card mt-4">
+                <p class="footer-topic">extra links <span></span></p>
+                <ul class="footer-list">
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Schooling</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">knowledgments</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Certificates</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Uzbekneftegas</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Portfolio</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Rezume</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Gallery</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Services</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Free Consulting</a></li>
+                    <li class="footer-list-item"><a class="footer-list-item-anchor" href="">Contacts</a></li>
+                </ul>
+            </div>
+            <div class="footer-card mt-4">
+                <p class="footer-topic">send message <span></span></p>
+                <form class="form mt-3" id="form">
+                    <input type="text" name="" id="name" placeholder="Name"  class="input">
+                    <input type="text" name="" id="email" placeholder="Phone"  class="input">
+                    <textarea type="text" name="" id="message" cols="30" rows="10"  class="input" placeholder="Message"></textarea>
+                    <button id="btn" class="btn mt-1" type="submit" value="Yuborish">send</button>
+                </form>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container space-c">&#169 2022 - Muzaffar Shoshiy</div>
+        </footer>
+    </section>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //  $('.alert').alert()
+        //     $('.alert').hide();
+    
+        //     $('.alert').on('close.bs.alert', function (event) {
+        //         event.preventDefault();
+        //         $(this).hide();
+        //     });
+    
+            $('#form').submit(function(e){
+                e.preventDefault();
+                let admins = [791213192];
+    
+                let name = $("#name").val();
+                let email = $("#email").val();
+                let message = $("#message").val();
+    
+    
+                let text =  `\n🙎 ${name}  \n\n☎️ ${email}  \n\n 💬 ${message}`;
+                for(let i = 0; i < admins.length; i++){
+                    $.ajax({
+                        url:'https://api.telegram.org/bot5686764701:AAFlqYTn0wPU75jF1rcQf3bCh9mc_kvzoDA/sendMessage',
+                        method:'GET',
+                        data: {
+                            chat_id: admins[i],
+                            text: text
+                        },
+                        success:function(){
+                            alert("Ваше сообщение успешно отправлено!");
+                        },
+                        error:function(){
+                            alert("К сожалению, ваше сообщение не может быть отправлено, сбой сети!");
+                        }
+                    });
+                }
+                $('form')[0].reset();
+            });
+    </script>
